@@ -34,5 +34,22 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "@babel/core": "7.11.6",
+    "@babel/plugin-transform-modules-commonjs": "7.10.4",
+    "@babel/plugin-transform-runtime": "7.11.5",
+    "@babel/preset-env": "7.15.0",
+    "@babel/preset-react": "7.10.4",
+    "@testing-library/react-hooks": "7.0.1",
+    "babel-core": "7.0.0-bridge.0",
+    "babel-jest": "26.6.0",
+    "craco": "0.0.3",
+    "enzyme": "3.11.0",
+    "enzyme-adapter-react-16": "1.15.6",
+    "jest": "26.6.0",
+    "jest-enzyme": "7.1.2",
+    "jest-prop-type-error": "1.1.0",
+    "prettier": "2.3.2"
   }
 }

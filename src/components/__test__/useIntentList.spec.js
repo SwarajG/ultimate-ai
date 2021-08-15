@@ -1,5 +1,5 @@
 import { renderHook, act } from '@testing-library/react-hooks';
-import { fetchIntentData } from '@service';
+import { fetchIntentData } from '../../service';
 import useIntentList from '../useIntentList';
 
 jest.mock('../../service');

@@ -1,0 +1,27 @@
+.intent-list {
+  margin: 40px auto;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.intent-list--loading {
+  width: 68%;
+}
+
+.intent-page {
+  width: 68%;
+  display: flex;
+  flex-wrap: wrap;
+  margin: 40px auto;
+  position: relative;
+}
+
+.round-label {
+  margin-left: 10px;
+}
+
+.intent-page .round-left {
+  left: 0;
+  display: flex;
+  align-items: center;
+}

@@ -39,11 +39,12 @@
 }
 
 .intent-card__see-more {
-  color: #0070f0;
+  color: #90caf9;
 }
 .intent-card__see-more:hover {
-  color: #004b8f;
+  color: #90caf9;
   cursor: pointer;
+  text-decoration: underline;
 }
 
 .round {

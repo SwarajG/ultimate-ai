@@ -1,23 +1,10 @@
-import { useState } from 'react';
 import PropTypes from 'prop-types';
-import { useDispatch } from 'react-redux';
-import { setSelectedIntentList, removeIntentFromSelection } from './slice/appSlice';
 import ExpressionModal from './ExpressionModal';
 import './styles/IntentCard.css';
+import useIntentCard from './useIntentCard';
 
 export default function IntentCard({ id, description, name, trainingData, isSelected }) {
-  const dispatch = useDispatch();
-  const [isModalOpen, setIsModalOpen] = useState();
-  const onModalClose = () => {
-    setIsModalOpen(false);
-  };
-  const onCheckChange = () => {
-    if (isSelected) {
-      dispatch(removeIntentFromSelection(id));
-    } else {
-      dispatch(setSelectedIntentList(id));
-    }
-  };
+  const { isModalOpen, onModalClose, onModalOpen, onCheckChange } = useIntentCard({ isSelected, id });
   return (
     <div className="intent-card">
       <div className="round">
@@ -38,7 +25,7 @@ export default function IntentCard({ id, description, name, trainingData, isSele
           </p>
         ))}
       </div>
-      <p className="intent-card__see-more" onClick={() => setIsModalOpen(true)}>
+      <p className="intent-card__see-more" onClick={onModalOpen}>
         See more
       </p>
       <ExpressionModal isModalOpen={isModalOpen} id={id} onClose={onModalClose} />

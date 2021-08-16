@@ -1,16 +1,10 @@
-import { useSelector, useDispatch } from 'react-redux';
 import useIntentList from './useIntentList';
 import IntentCardSkelton from './IntentCardSkelton';
 import IntentCard from './IntentCard';
-import { getIntentList } from './slice/dataSlice';
-import { getSelectedIntentList, selectAll } from './slice/appSlice';
 import './styles/IntentList.css';
 
 export default function IntentList() {
-  const data = useSelector(getIntentList);
-  const dispatch = useDispatch();
-  const selectedIntentList = useSelector(getSelectedIntentList);
-  useIntentList();
+  const { data, selectedIntentList, onSelectAllToggle } = useIntentList();
 
   if (!data.length) {
     const list = Array.from({ length: 14 }, (_, i) => i);
@@ -22,14 +16,6 @@ export default function IntentList() {
       </div>
     );
   }
-  const onSelectAllToggle = (e) => {
-    if (e.target.checked) {
-      const idList = data.map(({ id }) => id);
-      dispatch(selectAll(idList));
-    } else {
-      dispatch(selectAll([]));
-    }
-  };
 
   return (
     <div className="intent-page">

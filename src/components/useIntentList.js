@@ -8,6 +8,7 @@ export default function useIntentList() {
 
   useEffect(() => {
     const getIntentData = async () => {
+      console.log('Hey');
       const response = await fetchIntentData();
       dispatch(setIntentList(response));
     };

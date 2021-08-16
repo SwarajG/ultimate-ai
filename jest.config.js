@@ -17,7 +17,9 @@ module.exports = {
   moduleNameMapper: {
     '^@components$': '<rootDir>/src/components/',
     '^@service$': '<rootDir>/src/service/',
+    '\\.(css|sass)$': 'identity-obj-proxy',
   },
+  modulePathIgnorePatterns: ['<rootDir>/.*/__mocks__'],
   automock: false,
   setupFiles: ['jest-prop-type-error'],
   resetModules: true,
